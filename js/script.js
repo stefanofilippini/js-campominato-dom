@@ -45,17 +45,28 @@ setBtn.addEventListener('click', () => {
 
     console.log(bombs);
 
+    let points = 0
+    let lose = false
+
     for (let i = 1; i <= cellsNumber; i++) {
         const square = createGridSquare(i, cellPerSide);
         container.append(square);
 
         square.addEventListener('click', function() {
         this.classList.add('active');
+
         if (this.classList.contains("bomb")){
+            lose = true
             const node_2 = document.createElement('h2');
-            node_2.append('HAI PERSO')
+            node_2.append(`PECCATO HAI PERSO CON UN PUNTEGGIO DI ${points}PUNTI!`)
             body.append (node_2)
+        }  else {
+        points = points + 1
+        console.log(`points = ${points}`);
         }});
+        
+        //punteggio
+
     }
 
     function createGridSquare(num, cells) {
