@@ -38,7 +38,9 @@ setBtn.addEventListener('click', () => {
 
     while (bombs.length < n_bomb) {
         let new_bomb = Math.floor((Math.random() * cellsNumber) + 1);
-        bombs.push(new_bomb);
+        if (bombs.includes(new_bomb) === false) {
+            bombs.push(new_bomb);
+        }
     }
 
     console.log(bombs);
@@ -48,7 +50,12 @@ setBtn.addEventListener('click', () => {
         container.append(square);
 
         square.addEventListener('click', function() {
-        this.classList.add('active')});
+        this.classList.add('active');
+        if (this.classList.contains("bomb")){
+            const node_2 = document.createElement('h2');
+            node_2.append('HAI PERSO')
+            body.append (node_2)
+        }});
     }
 
     function createGridSquare(num, cells) {

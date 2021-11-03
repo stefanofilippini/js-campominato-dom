@@ -6,8 +6,8 @@
 
 .container {
     margin: 0 auto;
-    height: 800px;
-    width: 800px;
+    height: 700px;
+    width: 700px;
     background-color: yellowgreen;
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +19,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h2 {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 35px;
 }
 
 .active {
