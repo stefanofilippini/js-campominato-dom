@@ -53,20 +53,23 @@ setBtn.addEventListener('click', () => {
         container.append(square);
 
         square.addEventListener('click', function() {
-        this.classList.add('active');
+/*             if (lose = false) { */
+                if (this.classList.contains("active") === false) {
+                    this.classList.add('active');
 
-        if (this.classList.contains("bomb")){
-            lose = true
-            const node_2 = document.createElement('h2');
-            node_2.append(`PECCATO HAI PERSO CON UN PUNTEGGIO DI ${points}PUNTI!`)
-            body.append (node_2)
-        }  else {
-        points = points + 1
-        console.log(`points = ${points}`);
-        }});
-        
-        //punteggio
-
+                    //punteggio
+                    if (this.classList.contains("bomb")){
+                        lose = true
+                        const node_2 = document.createElement('h2');
+                        node_2.append(`PECCATO HAI PERSO CON UN PUNTEGGIO DI ${points}PUNTI!`)
+                        body.append (node_2)
+                    }  else {
+                    points = points + 1
+                    console.log(`points = ${points}`);
+                    }
+                }
+/*             } */
+        });
     }
 
     function createGridSquare(num, cells) {
